@@ -1,0 +1,240 @@
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (22.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20131017221029)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (11.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying(255), "day_of_birth" timestamp, "address" character varying(255), "district" character varying(255), "city" character varying(255), "state" character varying(255), "zip_code" character varying(255), "identification" character varying(255), "identification_agency" character varying(255), "cpf" character varying(255), "password" character varying(255), "email" character varying(255), "facebook" character varying(255), "twitter" character varying(255), "profession" character varying(255), "registry" character varying(255), "admission_date" timestamp, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131017221029"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddPasswordDigestToUsers (20131021222510)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD COLUMN "password_digest" character varying(255)[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131021222510"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Migrating to RemovePasswordFromUsers (20131022010836)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "users" DROP "password"[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131022010836"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddConfirmationFieldsToUsers (20131022114046)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "confirmed_at" timestamp[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "users" ADD COLUMN "confirmation_token" character varying(255)
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131022114046"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-19 22:54:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_visitor_navbar.html.erb (37.5ms)
+Completed 200 OK in 2101ms (Views: 2013.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-11-19 22:54:27 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-19 22:54:27 -0300
+
+
+Started GET "/assets/default.css?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/bootstrap-datetimepicker.css?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/bootstrap-datetimepicker.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-19 22:54:28 -0300
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-19 22:54:32 -0300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (139.5ms)
+  Rendered users/new.html.erb within layouts/application (141.6ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.3ms)
+Completed 200 OK in 165ms (Views: 157.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2013-11-19 22:54:32 -0300
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-19 22:55:39 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SRuo9pOuOIxItRzeAGYbR7udLOkk8ILhLVbeltozHig=", "user"=>{"full_name"=>"Marcelo de Brito Garcia", "day_of_birth"=>"07/04/1979", "address"=>"al Inacio Caldas", "district"=>"Souza", "city"=>"Belem", "zip_code"=>"", "identification"=>"", "identification_agency"=>"", "cpf"=>"", "email"=>"mbgarcia.pa@gmail.com", "facebook"=>"", "twitter"=>"", "profession"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "state"=>"PA", "commit"=>"Criar Usuário"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (1.9ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'mbgarcia.pa@gmail.com' LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE ("users"."admission_date" BETWEEN '2013-10-20 02:55:39.657509' AND '2013-11-20 01:55:39')
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "users" ("address", "admission_date", "city", "confirmation_token", "cpf", "created_at", "day_of_birth", "district", "email", "facebook", "full_name", "identification", "identification_agency", "password_digest", "profession", "registry", "twitter", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["address", "al Inacio Caldas"], ["admission_date", Tue, 19 Nov 2013 23:55:39 BRST -02:00], ["city", "Belem"], ["confirmation_token", "ywofZG4HO_w8S5TeEvVf2w"], ["cpf", ""], ["created_at", Tue, 19 Nov 2013 23:55:39 BRST -02:00], ["day_of_birth", Sat, 07 Apr 1979 00:00:00 BRT -03:00], ["district", "Souza"], ["email", "mbgarcia.pa@gmail.com"], ["facebook", ""], ["full_name", "Marcelo de Brito Garcia"], ["identification", ""], ["identification_agency", ""], ["password_digest", "$2a$10$tf2STJKaBgmvvLKyjsI/5uME.uPImc02.ORt1yRTfSnf7S2pl8g8q"], ["profession", ""], ["registry", "2013-11-1"], ["twitter", ""], ["updated_at", Tue, 19 Nov 2013 23:55:39 BRST -02:00], ["zip_code", ""]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  Rendered signup/confirm_email.html.erb (1.4ms)
+  Rendered signup/confirm_email.text.erb (1.1ms)
+
+Sent mail to mbgarcia.pa@gmail.com (56.7ms)
+Date: Tue, 19 Nov 2013 22:55:40 -0300
+From: no-reply@azulino.com.br
+To: mbgarcia.pa@gmail.com
+Message-ID: <528c169c8455b_8a28195d360436f8@Marcelo-Garcias-MacBook.local.mail>
+Subject: Azulico - Confirme seu email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_528c169c813cd_8a28195d36043566";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_528c169c813cd_8a28195d36043566
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao Azulico!
+
+Seja bem vindo ao Azulico, Marcelo de Brito Garcia.
+Agora voc=C3=AA faz parte de um grupo capaz de transformar a realidade do=
+ Clube do Remo
+
+
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/confirmation?token=3DywofZG4HO_w8S5TeEvVf2w
+
+Obrigado por se cadastrar no http://localhost:3000/.=
+
+----==_mimepart_528c169c813cd_8a28195d36043566
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1> Seja bem vindo ao Azulico! </h1>
+<p>
+	Seja bem vindo ao Azulico, Marcelo de Brito Garcia.
+Agora voc=C3=AA faz parte de um grupo capaz de transformar a realidade do=
+ Clube do Remo
+
+</p>
+<p>
+	Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"htt=
+p://localhost:3000/confirmation?token=3DywofZG4HO_w8S5TeEvVf2w">http://lo=
+calhost:3000/confirmation?token=3DywofZG4HO_w8S5TeEvVf2w</a>
+</p>
+<p>
+	Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">azulico.=
+com.br</a>.
+</p>=
+
+----==_mimepart_528c169c813cd_8a28195d36043566--
+
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 1251ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2013-11-19 22:55:40 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.6ms)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 1.5ms)
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT 1 AS one FROM "users" WHERE ("users"."email" = 'mbgarcia.pa@gmail.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (50.4ms)[0m  [1mUPDATE "users" SET "confirmed_at" = $1, "confirmation_token" = $2, "updated_at" = $3 WHERE "users"."id" = 1[0m  [["confirmed_at", Tue, 19 Nov 2013 23:58:03 BRST -02:00], ["confirmation_token", ""], ["updated_at", Tue, 19 Nov 2013 23:58:03 BRST -02:00]]
+  [1m[35m (1.8ms)[0m  COMMIT
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2013-11-19 22:58:10 -0300
+Processing by UserSessionsController#new as HTML
+  Rendered user_sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2013-11-19 22:58:21 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SRuo9pOuOIxItRzeAGYbR7udLOkk8ILhLVbeltozHig=", "user_session"=>{"email"=>"mbgarcia.pa@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'mbgarcia.pa@gmail.com' AND ("users"."confirmed_at" IS NOT NULL) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 242ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-19 22:58:22 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_user_navbar.html.erb (3.4ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.8ms)

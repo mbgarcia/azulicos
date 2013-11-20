@@ -1,0 +1,105 @@
+<% if @user.errors.any? %>
+	<div id="error_explanation">
+		<%= t 'general.form_error'%>
+	</div>
+<%  end %>
+
+<%= form_for @user do |f|%>
+	<div class='form'>
+		<div>
+			<%= f.label :full_name %>
+			<%= f.text_field :full_name, size:180, :class => 'bigger-form-field', maxlength: 40 %>
+			<%= error_tag @user, :full_name %>
+		</div>
+
+		<div>
+			<%= f.label :day_of_birth %>
+	    <div id="day-of-birth-field" class="input-append date">
+	      <%= f.text_field :day_of_birth, :"data-format" => "dd/MM/yyyy" %>
+	      <span class="add-on">
+	        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+	      </span>
+	    </div>
+			<%= error_tag @user, :day_of_birth %>
+		</div>
+	
+		<div>
+			<%= f.label :address %>
+			<%= f.text_field :address, :class => 'bigger-form-field', maxlength: 40 %>
+		</div>
+
+		<div>
+			<%= f.label :district %>
+			<%= f.text_field :district, maxlength: 30 %>
+
+			<%= f.label :city %>
+			<%= f.text_field :city, maxlength: 30 %>
+		</div>
+
+		<div>
+			<%= f.label :zip_code %>
+			<%= f.text_field :zip_code, maxlength: 10 %>
+
+			<%= f.label :state %>
+			<%= select_tag( :state, options_for_select(estados, 'PA'), class: 'combo-state')%>
+		</div>
+
+		<div>
+			<%= f.label :identification %>
+			<%= f.text_field :identification, maxlength: 20 %>
+
+			<%= f.label :identification_agency %>
+			<%= f.text_field :identification_agency, maxlength: 30 %>
+
+		</div>
+		<div>
+			<%= f.label :cpf %>
+			<%= f.text_field :cpf, maxlength: 14 %>
+		</div>
+
+		<div>
+			<%= f.label :email %>
+			<%= f.email_field :email, maxlength: 40 %>
+			<%= error_tag @user, :email %>
+		</div>
+
+		<div>
+			<%= f.label :facebook %>
+			<%= f.text_field :facebook, maxlength: 30 %>
+
+			<%= f.label :twitter %>
+			<%= f.text_field :twitter, maxlength: 30 %>
+		</div>
+
+		<div>
+			<%= f.label :profession %>
+			<%= f.text_field :profession, maxlength: 30 %>
+		</div>
+
+		<div>
+			<%= f.label :password %>
+			<%= f.password_field :password, maxlength: 30 %>
+			<%= error_tag @user, :password %>
+		</div>
+
+		<div>
+			<%= f.label :password_confirmation %>
+			<%= f.password_field :password_confirmation, maxlength: 30 %>
+			<%= error_tag @user, :password_confirmation %>
+		</div>
+	</div>
+	
+	<p>
+		<%= f.submit :class => "btn btn-default" %>
+	</p>
+
+<% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $('#day-of-birth-field').datetimepicker({
+      language: 'pt-BR'
+    });
+    $('#user_day_of_birth').attr('readonly', true);
+  });
+</script>

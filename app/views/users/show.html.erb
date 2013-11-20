@@ -1,0 +1,73 @@
+<div class="form-view">
+  <h1>
+    <%= t '.title' %>
+  </h1>    
+
+  <div>
+    <label> <%= t '.registry' %>   </label>
+  	<span>  <%= @user.registry %>  </span>
+
+    <label> <%= t '.full_name' %>  </label>
+    <span>  <%= @user.full_name %> </span>    
+  </div>
+
+  <div>
+      <label> <%= t '.admission_date' %> </label>
+      <span><%= br_date_format @user, :admission_date %> </span>
+
+      <label> <%= t '.day_of_birth' %> </label>
+      <span><%= br_date_format @user, :day_of_birth %> </span>
+  </div>
+
+  <div>
+      <label> <%= t '.zip_code' %> </label>
+      <span>  <%= @user.zip_code %> </span>
+
+      <label> <%= t '.address' %> </label>
+      <span><%= @user.address %> </span>
+  </div>
+
+  <div>
+      <label> <%= t '.district' %> </label>
+      <span>  <%= @user.district %> </span>
+
+      <label> <%= t '.city' %> </label>
+      <span><%= @user.city %> </span>
+
+      <label> <%= t '.state' %> </label>
+      <span><%= @user.state %> </span>      
+  </div>
+
+  <div>
+      <label> <%= t '.identification' %> </label>
+      <span>  <%= @user.identification %> </span>
+
+      <label> <%= t '.identification_agency' %> </label>
+      <span><%= @user.identification_agency %> </span>
+  </div>
+
+  <div>
+      <label> <%= t '.cpf' %> </label>
+      <span>  <%= @user.cpf %> </span>
+
+      <label> <%= t '.profession' %> </label>
+      <span><%= @user.profession %> </span>
+  </div>
+
+  <div>
+      <label> <%= t '.email' %> </label>
+      <span>  <%= @user.email %> </span>
+
+      <label> <%= t '.facebook' %> </label>
+      <span><%= @user.facebook %> </span>
+
+      <label> <%= t '.twitter' %> </label>
+      <span><%= @user.twitter %> </span>
+  </div>
+
+  <p>
+    <%= link_to t('.edit'), edit_user_path(@user), :class => 'app-button' %> 
+    <%= link_to 'Home', root_path, :class => 'app-button' %> 
+  </p>
+</div>
+	

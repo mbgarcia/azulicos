@@ -1,0 +1,38 @@
+.combo-state{
+	width:70px;
+}
+
+.bigger-form-field{
+	width:400px;
+}
+
+.form-view{
+  margin-top: 20px
+}
+
+.form-view div *{
+  display:inline-block;
+  padding-bottom:10px;
+}
+
+.form-view h1{
+  margin-bottom: 10px;
+}
+
+.form-view label{
+  font-weight: bold; 
+}
+
+.form-view div *:first-child{
+  width:150px;
+}
+
+.form-view div *:nth-child(2){
+  width:200px;
+}
+
+.form-view div *:nth-child(3){
+  width:150px;
+  margin-left:10px;
+  font-weigth:bold;
+}

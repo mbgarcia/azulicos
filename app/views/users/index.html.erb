@@ -1,0 +1,31 @@
+<h1> <%= t 'users.title' %></h1>
+
+<table class="data-table" summary="Employee Pay Sheet">
+  <thead>
+    <tr>
+      <th scope='col'> <%= t 'users.show.registry' %></th>
+      <th scope='col'> <%= t 'users.show.full_name' %></th>
+      <th scope='col'> <%= t 'users.show.email' %></th>
+      <th scope='col'></th>
+      <th scope='col'></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.registry %></td>
+        <td><%= user.full_name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to t('links.show'), user %></td>
+        <td><%= link_to t('links.edit'), edit_user_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('users.new'), new_user_path, :class=> 'app-button' %>
+
+<%= link_to t('links.back'), root_path, :class=> 'app-button' %>

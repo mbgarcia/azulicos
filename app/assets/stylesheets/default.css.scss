@@ -1,0 +1,175 @@
+$header-height: 80px; 
+$content-width: 900px;
+
+$serif-families: "Alfa Slab One", "Georgia", serif; 
+$sans-serif-families: "Stardos Stencil", sans-serif;
+
+$error-text-color: #B94A48;
+$success-text-color: #468847;
+$blue-color:#07247a;
+$light-color:#f2f0e8;
+
+*{ 
+	font-family: $sans-serif-families; 
+	font-size: 14px;
+}
+
+.clear{
+	clear: both;
+}
+
+body { background-color: #f5f5f5; }
+
+@mixin shadow($color, $x, $y, $radius) { 
+	-moz-box-shadow:	$color $x $y $radius; 
+	-webkit-box-shadow: $color $x $y $radius; 
+	box-shadow:	$color $x $y $radius;
+}
+
+header { 
+	@include shadow(#ccc, 0, 3px, 6px);
+	border-bottom: 1px solid #686; 
+	margin-bottom: 15px;
+
+	#header-wrap { 
+		width: $content-width; 
+		margin: 0 auto;
+	}
+	
+	height: $header-height; 
+	background-color: $blue-color;
+
+	h1 {
+		float: left; 
+		a{
+			color: #f9fafd; 
+			font-family: $serif-families; 
+			font-weight: 400; 
+			font-size: 4.0em;
+			font-style: normal;
+			&:hover {
+				color: #b8aeae;
+				text-decoration:none;
+			}
+		}
+	}
+}
+
+header nav {
+	float: right;
+	
+	ul { 
+		display: inline-block; 
+		vertical-align: middle; 
+		line-height: 55px;
+	}
+	li { 
+		display: inline-block; 
+		line-height: 24px; 
+		background-color: #ffffff; 
+		padding: 3px 10px;
+		
+		-moz-border-radius: 5px; 
+		border-radius: 5px; 
+		vertical-align: middle;
+
+		a{ 
+			display: block; 
+			font-size: 12px; 
+			font-weight: 600; 
+			color: $blue-color;
+		}
+	}
+}
+
+#content {
+	text-align: left; 
+	width: $content-width; 
+	margin: 0 auto;
+
+	h1 { 
+		font-size: 1.5em;
+	}
+	
+	a, a:visited, a:hover { 
+		&:hover {
+			text-decoration: underline;
+		} 
+	}
+	
+	ul, form, p {
+		margin: 10px 0;
+	}
+}
+
+.form label{
+	display:inline-block;
+}
+
+.form div *:first-child{
+	width:150px;
+}
+
+.form div *:nth-child(3){
+	width:150px;
+	margin-left:10px;
+}
+
+.app-button, .app-button:hover, .app-button:visited{	
+		display: inline-block; 
+		line-height: 24px; 
+		background-color: #35589c; 
+		padding: 3px 10px;
+		color: #ffffff;
+		
+		-moz-border-radius: 5px; 
+		border-radius: 5px; 
+		vertical-align: middle;
+}
+
+.field_with_errors {
+	display: inline;
+	label { color: $error-text-color; }
+	
+	input[type=text], input[type=password], textarea { 
+		border: 1px solid rgba(189,74,72, 0.5); 
+
+		@include shadow(rgba(189,74,72, 0.2), 0px, 0px, 8px);
+		
+		&:focus { border: 1px solid rgba(189,74,72, 0.6); }
+	}
+}
+
+.error_message { 
+	margin-left: 5px; 
+	display: inline; 
+	color: $error-text-color;
+}
+
+.padded_flash { 
+	padding: 10px;
+	margin: 10px 0; 
+	font-weight: bold; 
+	width: 500px;
+}
+
+#error_explanation { 
+	border: 1px solid $error-text-color; 
+	color: $error-text-color; 
+	background-color: #F2DEDE; 
+	@extend .padded_flash;
+}
+
+#notice { 
+	color: $success-text-color; 
+	border: 1px solid $success-text-color; 
+	@extend .padded_flash; 
+	background-color: #DFF0D8;
+}
+
+#alert { 
+	color: $error-text-color; 
+	border: 1px solid $error-text-color; 
+	@extend .padded_flash; 
+	background-color: #F2DEDE;
+}

@@ -1,0 +1,46 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require bootstrap_and_overrides
+ *= require bootstrap-datetimepicker
+ */
+
+
+.data-table
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 12px;
+  width: 800px;
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.6em;
+}
+
+.data-table th
+{
+  font-size: 14px;
+  font-weight: normal;
+  color: #039;
+  padding: 10px 8px;
+  border-bottom: 2px solid #6678b1;
+}
+
+.data-table td
+{
+  color: #669;
+  padding: 9px 8px 0px 8px;
+}
+
+.data-table tbody tr:hover td
+{
+  color: #009;
+}
