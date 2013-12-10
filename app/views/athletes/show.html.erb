@@ -1,0 +1,64 @@
+<div class="form-view">
+  <h1>
+    <%= t '.title' %>
+  </h1>    
+
+  <div>
+    <label> <%= t '.full_name' %>  </label>
+    <span>  <%= @athlete.full_name %> </span>    
+  </div>
+
+  <div>
+      <label> <%= t '.birth_day' %> </label>
+      <span><%= br_date_format @athlete, :birth_day %> </span>
+  </div>
+
+  <div>
+      <label> <%= t '.zip_code' %> </label>
+      <span>  <%= @athlete.zip_code %> </span>
+
+      <label> <%= t '.address' %> </label>
+      <span><%= @athlete.address %> </span>
+  </div>
+
+  <div>
+      <label> <%= t '.district' %> </label>
+      <span>  <%= @athlete.district %> </span>
+
+      <label> <%= t '.city' %> </label>
+      <span><%= @athlete.city %> </span>
+
+      <label> <%= t '.state' %> </label>
+      <span><%= @athlete.state %> </span>
+  </div>
+
+  <div>
+      <label> <%= t '.identification' %> </label>
+      <span>  <%= @athlete.identification %> </span>
+
+      <label> <%= t '.identification_agency' %> </label>
+      <span><%= @athlete.identification_agency %> </span>
+  </div>
+
+  <div>
+      <label> <%= t '.cpf' %> </label>
+      <span>  <%= @athlete.cpf %> </span>
+  </div>
+
+  <div>
+      <label> <%= t '.email' %> </label>
+      <span>  <%= @athlete.email %> </span>
+
+      <label> <%= t '.facebook' %> </label>
+      <span><%= @athlete.facebook %> </span>
+
+      <label> <%= t '.twitter' %> </label>
+      <span><%= @athlete.twitter %> </span>
+  </div>
+
+  <p>
+    <%= link_to t('.edit'), edit_athlete_path(@athlete), :class => 'app-button' %> 
+    <%= link_to 'Home', root_path, :class => 'app-button' %> 
+  </p>
+</div>
+	

@@ -1,35 +1,56 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Azulico</title>
-  <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>  
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
 
-	<header>
-		<div id='header-wrap'>
-			<h1><%=	link_to	"Azulico",	root_path	%> </h1>
-			<% if user_signed_in? %>
-				<%= render 'layouts/user_navbar' %>
-			<% else %>
-				<%= render 'layouts/visitor_navbar' %>
-			<% end %>
-		</div>
-	</header>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Azulicos" %></title>
+    <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>  
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
 
-	<div id='content', class='container-fluid'>
-		<% if notice.present? %>
-			<p id='notice'> <%= notice %> </p>
-		<% end %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
-		<% if alert.present? %>
-			<p id='alert'> <%= alert %> </p>
-		<% end %>
+  </head>
 
-		<%= yield %>
-	</div>
-</body>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+  <header>
+    <div id='header-wrap'>
+      <h1><%= link_to "Azulicos", root_path %> </h1>
+      <% if user_signed_in? %>
+        <%= render 'layouts/user_navbar' %>
+      <% else %>
+        <%= render 'layouts/visitor_navbar' %>
+      <% end %>
+    </div>
+  </header>
+
+
+  <div class='header-wrap'>
+    <ul class="nav nav-pills">
+      <li>
+        <%= link_to t('nav.home'), root_path %>
+      </li>
+      <li>
+        <%= link_to t('nav.athletes'), athletes_path %>
+      </li>
+    </ul>      
+  </div>    
+ 
+  <div id='content', class='container-fluid'>
+    <% if notice.present? %>
+      <p id='notice'> <%= notice %> </p>
+    <% end %>
+
+    <% if alert.present? %>
+      <p id='alert'> <%= alert %> </p>
+    <% end %>
+
+    <%= yield %>
+  </div>
+  </body>
 </html>

@@ -15,7 +15,7 @@
 		<div>
 			<%= f.label :day_of_birth %>
 	    <div id="day-of-birth-field" class="input-append date">
-	      <%= f.text_field :day_of_birth, :"data-format" => "dd/MM/yyyy" %>
+	      <%= f.text_field :day_of_birth, :"data-format" => "dd/MM/yyyy", :class => 'form-date-field' %>
 	      <span class="add-on">
 	        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
 	      </span>

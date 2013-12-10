@@ -2,6 +2,8 @@ Azulico::Application.routes.draw do
 
   resources :users
 
+  resources :athletes
+
   resource :confirmation, only: [:show]  
 
   resource :user_sessions, only: [:create, :new, :destroy]

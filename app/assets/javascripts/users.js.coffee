@@ -11,4 +11,7 @@ $.fn.datetimepicker.defaults = {
   endDate: Infinity
 };
 
-$('#day-of-birth-field').datetimepicker => language: 'pt-BR'
+$('#birth-day-field').datetimepicker => language: 'pt-BR'
+$('#father-birth-day-field').datetimepicker => language: 'pt-BR'
+$('#mother-birth-day-field').datetimepicker => language: 'pt-BR'
+$('#responsible-birth-day-field').datetimepicker => language: 'pt-BR'

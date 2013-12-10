@@ -1,0 +1,237 @@
+<% if @athlete.errors.any? %>
+	<div id="error_explanation">
+		<%= t 'general.form_error'%>
+	</div>
+<%  end %>
+
+<%= form_for @athlete do |f|%>
+	<div class='form'>
+		<div>
+			<%= f.label :full_name %>
+			<%= f.text_field :full_name, :class => 'bigger-form-field', maxlength: 40 %>
+			<%= error_tag @athlete, :full_name %>
+
+			<%= f.label :nick_name %>
+			<%= f.text_field :nick_name, maxlength: 20 %>
+		</div>
+
+		<div>
+			<%= f.label :birth_day %>
+	    <div id="birth-day-field" class="input-append date">
+	      <%= f.text_field :birth_day, :"data-format" => "dd/MM/yyyy", :class => 'form-date-field' %>
+	      <span class="add-on">
+	        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+	      </span>
+	    </div>
+
+			<%= f.label :birth_city %>
+			<%= f.text_field :birth_city, maxlength: 40 %>
+
+			<%= f.label :birth_state %>
+			<%= select_tag( :birth_state, options_for_select(estados, 'PA'), class: 'combo-state')%>
+		</div>
+
+		<div>
+			<%= f.label :skin %>
+			<%= select_tag( :skin, options_for_select(t('form.skin_colors').invert, @athlete.skin), class: 'combo-color')%>
+
+			<%= f.label :hair %>
+			<%= select_tag( :hair, options_for_select(t('form.hair_colors').invert, @athlete.hair), class: 'combo-color')%>
+
+			<%= f.label :eyes %>
+			<%= select_tag( :eyes, options_for_select(t('form.eyes_colors').invert, @athlete.eyes), class: 'combo-color')%>
+		</div>
+
+		<div>
+			<%= f.label :religion %>
+			<%= f.text_field :religion, maxlength: 40 %>
+
+			<%= f.label :birth_certificate %>
+			<%= f.text_field :birth_certificate, maxlength: 40 %>
+
+			<%= f.label :book %>
+			<%= f.text_field :book, maxlength: 40 %>
+		</div>
+
+		<div>
+			<%= f.label :page %>
+			<%= f.text_field :page, maxlength: 40 %>
+
+			<%= f.label :county %>
+			<%= f.text_field :county, maxlength: 40 %>
+		</div>
+
+		<div>
+			<%= f.label :identification %>
+			<%= f.text_field :identification, maxlength: 20 %>
+
+			<%= f.label :identification_agency %>
+			<%= f.text_field :identification_agency, maxlength: 30 %>
+		</div>
+
+		<div>
+			<%= f.label :cpf %>
+			<%= f.text_field :cpf, maxlength: 14 %>
+
+			<%= f.label :ctps %>
+			<%= f.text_field :ctps, maxlength: 25 %>
+		</div>
+
+		<div>
+			<%= f.label :voter_registry %>
+			<%= f.text_field :voter_registry, maxlength: 14 %>
+
+			<%= f.label :reservist_registry %>
+			<%= f.text_field :reservist_registry, maxlength: 25 %>
+
+			<%= f.label :driver_license %>
+			<%= f.text_field :driver_license, maxlength: 25 %>
+		</div>
+
+		<div>
+			<%= f.label :schooling %>
+			<%= f.text_field :schooling, maxlength: 30 %>
+
+			<%= f.label :college %>
+			<%= f.text_field :college, maxlength: 30 %>
+		</div>
+
+		<div>
+			<%= f.label :address %>
+			<%= f.text_field :address, :class => 'bigger-form-field', maxlength: 40 %>
+
+			<%= f.label :phone_number %>
+			<%= f.text_field :phone_number, maxlength: 20 %>			
+		</div>
+
+		<div>
+			<%= f.label :district %>
+			<%= f.text_field :district, maxlength: 30 %>
+
+			<%= f.label :city %>
+			<%= f.text_field :city, maxlength: 30 %>
+		</div>
+
+		<div>
+			<%= f.label :zip_code %>
+			<%= f.text_field :zip_code, maxlength: 10 %>
+
+			<%= f.label :state %>
+			<%= select_tag( :state, options_for_select(estados, 'PA'), class: 'combo-state')%>
+		</div>
+
+		<div>
+			<%= f.label :father_name %>
+			<%= f.text_field :father_name, :class => 'bigger-form-field', maxlength: 40 %>
+
+			<%= f.label :birth_day %>
+	    <div id="father-birth-day-field" class="input-append date">
+	      <%= f.text_field :father_birth_day, :"data-format" => "dd/MM/yyyy" %>
+	      <span class="add-on">
+	        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+	      </span>
+	    </div>
+		</div>
+
+		<div>
+			<%= f.label :father_profession %>
+			<%= f.text_field :father_profession, maxlength: 40 %>
+
+			<%= f.label :father_phone_number %>
+			<%= f.text_field :father_phone_number, maxlength: 40 %>
+		</div>
+
+		<div>
+			<%= f.label :father_civil_status %>
+			<%= f.text_field :father_civil_status, maxlength: 40 %>
+
+			<%= f.label :father_religion %>
+			<%= f.text_field :mother_religion, maxlength: 40 %>			
+		</div>
+
+		<div>
+			<%= f.label :mother_name %>
+			<%= f.text_field :mother_name, :class => 'bigger-form-field', maxlength: 40 %>
+
+			<%= f.label :birth_day %>
+	    <div id="mother-birth-day-field" class="input-append date">
+	      <%= f.text_field :mother_birth_day, :"data-format" => "dd/MM/yyyy" %>
+	      <span class="add-on">
+	        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+	      </span>
+	    </div>
+		</div>
+
+		<div>
+			<%= f.label :mother_profession %>
+			<%= f.text_field :mother_profession, maxlength: 40 %>
+
+			<%= f.label :mother_phone_number %>
+			<%= f.text_field :mother_phone_number, maxlength: 40 %>
+		</div>
+
+		<div>
+			<%= f.label :mother_civil_status %>
+			<%= f.text_field :mother_civil_status, maxlength: 40 %>
+
+			<%= f.label :mother_religion %>
+			<%= f.text_field :mother_religion, maxlength: 40 %>			
+		</div>
+
+		<div>
+			<%= f.label :responsible_name %>
+			<%= f.text_field :responsible_name, :class => 'bigger-form-field', maxlength: 40 %>
+
+			<%= f.label :birth_day %>
+	    <div id="responsible-birth-day-field" class="input-append date">
+	      <%= f.text_field :responsible_birth_day, :"data-format" => "dd/MM/yyyy" %>
+	      <span class="add-on">
+	        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+	      </span>
+	    </div>
+		</div>
+		<div>
+			<%= f.label :responsible_profession %>
+			<%= f.text_field :responsible_profession, maxlength: 40 %>			
+		</div>
+
+		<div>
+			<%= f.label :email %>
+			<%= f.email_field :email, maxlength: 40 %>
+
+			<%= f.label :facebook %>
+			<%= f.text_field :facebook, maxlength: 30 %>
+
+			<%= f.label :twitter %>
+			<%= f.text_field :twitter, maxlength: 30 %>
+		</div>
+	</div>
+	
+	<p>
+		<%= f.submit :class => "btn btn-default" %>
+	</p>
+
+<% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $('#birth-day-field').datetimepicker({
+      language: 'pt-BR'
+    });
+    $('#father-birth-day-field').datetimepicker({
+      language: 'pt-BR'
+    });
+    $('#mother-birth-day-field').datetimepicker({
+      language: 'pt-BR'
+    });
+    $('#responsible-birth-day-field').datetimepicker({
+      language: 'pt-BR'
+    });
+
+    $('#athlete_birth_day').attr('readonly', true);
+    $('#athlete_father_birth_day').attr('readonly', true);
+    $('#athlete_mother_birth_day').attr('readonly', true);
+    $('#athlete_responsible_birth_day').attr('readonly', true);
+
+  });
+</script>

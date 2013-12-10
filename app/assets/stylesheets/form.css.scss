@@ -1,0 +1,76 @@
+.form {
+  background-color: #f4f3f3;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 5px;
+  padding:5px;
+}
+.form label{
+  display:inline-block;
+}
+
+.form > div *:first-child{
+  width:130px;
+}
+
+.form > div *:nth-child(3), .form > div *:nth-child(5){
+  width:100px;
+  margin-left:10px;
+}
+
+.form label, .form input, .form select {
+  font-size: 14px;
+  font-family: Arial;  
+}
+
+.form input{
+  width:180px;
+}
+
+
+.combo-state{
+	width:70px;
+}
+
+.combo-color{
+  width:120px;
+  margin-right:74px;
+}
+
+.form .bigger-form-field{
+	width:490px;
+}
+
+.form div .form-date-field{
+  width: 150px;
+}
+
+.form-view{
+  margin-top: 20px
+}
+
+.form-view div *{
+  display:inline-block;
+  padding-bottom:10px;
+}
+
+.form-view h1{
+  margin-bottom: 10px;
+}
+
+.form-view label{
+  font-weight: bold; 
+}
+
+.form-view > div *:first-child{
+  width:150px;
+}
+
+.form-view div *:nth-child(2){
+  width:200px;
+}
+
+.form-view div *:nth-child(3){
+  width:150px;
+  margin-left:10px;
+  font-weigth:bold;
+}

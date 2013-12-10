@@ -100,6 +100,8 @@ pt-BR:
       room: Quarto
       user: Usuário
       user_sessions: Sessão
+  athlete:
+    title: Atletas
   confirmations: 
     success: "Email confirmado com sucesso, obrigado!"
   date: 
@@ -238,6 +240,28 @@ pt-BR:
       already_logged_in: "Você já está logado."
       signed_in: "Login efetuado com sucesso!"
       signed_out: "Logout efetuado com sucesso. Até logo!"
+  form:
+    eyes_colors:
+      brown: Castanho
+      blue: Azul
+      black: Preto
+      gray: Cinza
+      red: Vermelho
+      green: Verde
+      violet: Violeta
+    hair_colors:
+      brown: Castanhos
+      black: Pretos
+      blond: Loiros
+      gray: Grisalhos
+      redhead: Ruivos
+      white: Brancos
+    skin_colors:
+      brown: Parda
+      yellown: Amarela
+      white: Branca
+      indian: Indígena
+      black: Preta
   general: 
     form_error: "Há erros no formulário, por favor verifique."
   helpers: 
@@ -260,6 +284,12 @@ pt-BR:
     back: Voltar
     show: Exibir
     edit: Editar
+  nav:
+    athletes: Atletas
+    balance_sheet: Movimentaçao do dia
+    home: Inicial
+    request: Requisição
+    transfers: Transferencias
   number: 
     currency: 
       format: 
