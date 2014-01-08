@@ -3,6 +3,7 @@
   border: 1px solid rgba(0,0,0,0.3);
   border-radius: 5px;
   padding:5px;
+  margin-bottom: 5px;
 }
 .form label{
   display:inline-block;
@@ -26,18 +27,29 @@
   width:180px;
 }
 
-
 .combo-state{
 	width:70px;
 }
 
-.combo-color{
+.combo-form-field{
   width:120px;
   margin-right:74px;
 }
 
+.check-form-field {
+  height: 20px;
+  color: red;
+  margin-bottom: 3px;
+  margin-right: 300px;  
+}
+
 .form .bigger-form-field{
 	width:490px;
+}
+
+.form .number-form-field{
+  width:100px;
+  margin-right:80px;
 }
 
 .form div .form-date-field{

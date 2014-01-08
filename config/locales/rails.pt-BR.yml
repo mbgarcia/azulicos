@@ -241,6 +241,23 @@ pt-BR:
       signed_in: "Login efetuado com sucesso!"
       signed_out: "Logout efetuado com sucesso. Até logo!"
   form:
+    age_groups:
+      sub7: 'Sub 7'
+      sub15: 'Sub 15'
+      sub20: 'Sub 20'
+    blood_group:
+      O_plus: "O+"
+      A_plus: "A+"
+      B_plus: "B+"
+      AB_plus: "AB+"
+      O_minus: "O-"
+      A_minus: "A-"
+      B_minus: "B-"
+      AB_minus: "AB-"
+    biotypes:
+      ectomorfo: Ecfomorfo
+      mesomorfo: Mesomorfo
+      endomorfo:  Endomorfo
     eyes_colors:
       brown: Castanho
       blue: Azul
@@ -256,6 +273,16 @@ pt-BR:
       gray: Grisalhos
       redhead: Ruivos
       white: Brancos
+    positions:
+      atacante: Atacante
+      lateral: Lateral
+      goleiro: Goleiro
+      meio: Meio
+      volante: Volante
+      zagueiro: Zagueiro
+    rh_factor: 
+      rh_positive: 'RH+'
+      rh_negative: 'RH-'
     skin_colors:
       brown: Parda
       yellown: Amarela

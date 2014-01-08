@@ -28,18 +28,18 @@
 			<%= f.text_field :birth_city, maxlength: 40 %>
 
 			<%= f.label :birth_state %>
-			<%= select_tag( :birth_state, options_for_select(estados, 'PA'), class: 'combo-state')%>
+			<%= f.select :birth_state, options_for_select(estados, 'PA'), {:include_blank => false }, {:class => 'combo-state'} %>
 		</div>
 
 		<div>
 			<%= f.label :skin %>
-			<%= select_tag( :skin, options_for_select(t('form.skin_colors').invert, @athlete.skin), class: 'combo-color')%>
+			<%= f.select :skin, options_for_select(t('form.skin_colors').invert, @athlete.skin), { :include_blank => true }, {:class => 'combo-form-field'} %>
 
 			<%= f.label :hair %>
-			<%= select_tag( :hair, options_for_select(t('form.hair_colors').invert, @athlete.hair), class: 'combo-color')%>
+			<%= f.select :hair, options_for_select(t('form.hair_colors').invert, @athlete.hair), { :include_blank => true }, {:class => 'combo-form-field'} %>
 
 			<%= f.label :eyes %>
-			<%= select_tag( :eyes, options_for_select(t('form.eyes_colors').invert, @athlete.eyes), class: 'combo-color')%>
+			<%= f.select :eyes, options_for_select(t('form.eyes_colors').invert, @athlete.eyes), { :include_blank => true }, {:class => 'combo-form-field'} %>
 		</div>
 
 		<div>
@@ -117,7 +117,7 @@
 			<%= f.text_field :zip_code, maxlength: 10 %>
 
 			<%= f.label :state %>
-			<%= select_tag( :state, options_for_select(estados, 'PA'), class: 'combo-state')%>
+			<%= f.select :state, options_for_select(estados, 'PA'), {:include_blank => false }, {:class => 'combo-state'} %>
 		</div>
 
 		<div>
@@ -206,7 +206,90 @@
 			<%= f.text_field :twitter, maxlength: 30 %>
 		</div>
 	</div>
+
+	<%= f.fields_for :physical_data do |p| %>
+	<div class='form'>
+		<div>
+			<%= p.label :heigth %>
+			<%= p.number_field :heigth, :step => 0.01, :class => 'number-form-field' %>
+
+			<%= p.label :weight %>
+			<%= p.number_field :weight, :step => 0.01, :class => 'number-form-field' %>
+
+			<%= p.label :foot %>
+			<%= p.number_field :foot, :step => 0.01, :class => 'number-form-field' %>
+		</div>
+
+		<div>
+			<%= p.label :arm %>
+			<%= p.number_field :arm, :step => 0.01, :class => 'number-form-field' %>
+
+			<%= p.label :calf %>
+			<%= p.number_field :calf, :step => 0.01, :class => 'number-form-field' %>
+
+			<%= p.label :blood_group %>
+			<%= p.select :blood_group, options_for_select(t('form.blood_group').invert, @athlete.physical_data.blood_group), {:include_blank => true }, {:class => 'combo-form-field'} %>
+		</div>
+
+		<div>
+			<%= p.label :rh_factor %>
+			<%= p.select :rh_factor, options_for_select(t('form.rh_factor').invert, @athlete.physical_data.rh_factor), {:include_blank => true }, {:class => 'combo-form-field'} %>
+
+			<%= p.label :biotype %>
+			<%= p.select :biotype, options_for_select(t('form.biotypes').invert, @athlete.physical_data.biotype), {:include_blank => true }, {:class => 'combo-form-field'} %>
+
+			<%= p.label :impulsion %>
+			<%= p.number_field :impulsion, :step => 0.01, :class => 'number-form-field' %>			
+		</div>
+
+		<div>
+			<%= p.label :aerobic_endurance %>
+			<%= p.number_field :aerobic_endurance, :step => 0.01, :class => 'number-form-field' %>			
+
+			<%= p.label :flexibility %>
+			<%= p.number_field :flexibility, :step => 0.01, :class => 'number-form-field' %>
+		</div>
+	</div>
+	<% end %>	
 	
+	<%= f.fields_for :technical_data do |p| %>
+	<div class='form'>
+		<div>
+			<%= p.label :right_foot %>
+			<%= p.check_box :right_foot, {class: 'check-form-field'} %>
+
+			<%= p.label :left_foot %>
+			<%= p.check_box :left_foot, {class: 'check-form-field'} %>
+
+			<%= p.label :position %>
+			<%= p.select :position, options_for_select(t('form.positions').invert, @athlete.technical_data.position), {:include_blank => true }, {:class => 'combo-form-field'} %>			
+		</div>
+		<div>
+			<%= p.label :second_option %>
+			<%= p.select :second_option, options_for_select(t('form.positions').invert, @athlete.technical_data.second_option), {:include_blank => true }, {:class => 'combo-form-field'} %>
+
+			<%= p.label :admission %>
+	    <div id="admission-field" class="input-append date">
+	      <%= p.text_field :admission, :"data-format" => "dd/MM/yyyy", :class => 'form-date-field' %>
+	      <span class="add-on">
+	        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+	      </span>
+	    </div>
+
+			<%= p.label :age_group %>
+			<%= p.select :age_group, options_for_select(t('form.age_groups').invert, @athlete.technical_data.age_group), {:include_blank => true }, {:class => 'combo-form-field'} %>	    
+		</div>
+		<div>
+			<%= p.label :registry %>
+			<%= p.text_field :registry %>
+
+			<%= p.label :federation_registry %>
+			<%= p.text_field :federation_registry %>			
+		</div>
+
+	</div>
+	<% end %>
+
 	<p>
 		<%= f.submit :class => "btn btn-default" %>
 	</p>
@@ -227,11 +310,15 @@
     $('#responsible-birth-day-field').datetimepicker({
       language: 'pt-BR'
     });
+    $('#admission-field').datetimepicker({
+      language: 'pt-BR'
+    });
 
     $('#athlete_birth_day').attr('readonly', true);
     $('#athlete_father_birth_day').attr('readonly', true);
     $('#athlete_mother_birth_day').attr('readonly', true);
     $('#athlete_responsible_birth_day').attr('readonly', true);
+    $('#admission-field').attr('readonly', true);
 
   });
 </script>

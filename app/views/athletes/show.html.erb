@@ -55,6 +55,13 @@
       <label> <%= t '.twitter' %> </label>
       <span><%= @athlete.twitter %> </span>
   </div>
+  
+  <div class='form'>
+    <div
+      <label> <%= t '.heigth' %> </label>
+      <span><%= @athlete.physical_data.heigth %> </span>
+    </div>
+  </div>
 
   <p>
     <%= link_to t('.edit'), edit_athlete_path(@athlete), :class => 'app-button' %> 
