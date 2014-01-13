@@ -13,6 +13,7 @@ class AthletesController < ApplicationController
     @athlete = Athlete.new
     @athlete.build_physical_data
     @athlete.build_technical_data
+    @athlete.build_special_care
   end
 
   def edit
@@ -57,7 +58,9 @@ class AthletesController < ApplicationController
       :physical_data_attributes => [:id, :heigth, :weight, :foot, :arm, :calf, 
         :blood_group, :rh_factor, :biotype, :impulsion, :aerobic_endurance, :flexibility],
       :technical_data_attributes => [:id, :right_foot, :left_foot, :position, :second_option, :admission, 
-        :age_group, :registry, :federation_registry]
+        :age_group, :registry, :federation_registry],
+      :special_care_attributes => [:id, :name, :relationship, :phones, :health_plan, :health_plan_name,
+        :remedies, :prohibited_drugs]
       )
   end 
 end

@@ -250,7 +250,7 @@
 			<%= p.number_field :flexibility, :step => 0.01, :class => 'number-form-field' %>
 		</div>
 	</div>
-	<% end %>	
+	<% end %>
 	
 	<%= f.fields_for :technical_data do |p| %>
 	<div class='form'>
@@ -262,7 +262,7 @@
 			<%= p.check_box :left_foot, {class: 'check-form-field'} %>
 
 			<%= p.label :position %>
-			<%= p.select :position, options_for_select(t('form.positions').invert, @athlete.technical_data.position), {:include_blank => true }, {:class => 'combo-form-field'} %>			
+			<%= p.select :position, options_for_select(t('form.positions').invert, @athlete.technical_data.position), {:include_blank => true }, {:class => 'combo-form-field'} %>
 		</div>
 		<div>
 			<%= p.label :second_option %>
@@ -289,6 +289,39 @@
 
 	</div>
 	<% end %>
+
+
+	<%= f.fields_for :special_care do |p| %>
+	<div class='form'>
+		<%= p.label t('special_care.title'), :class => 'form-label' %>
+		<div>
+			<%= p.label :name %>
+			<%= p.text_field :name%>
+
+			<%= p.label :relationship %>
+			<%= p.select :relationship, options_for_select(t('form.relationships').invert, @athlete.special_care.relationship), {:include_blank => true }, {:class => 'combo-form-field'} %>
+
+			<%= p.label :phones %>
+			<%= p.text_field :phones %>
+		</div>
+		<div>
+			<%= p.label :health_plan %>
+			<%= p.check_box :health_plan, {class: 'check-form-field'} %>
+
+			<%= p.label :health_plan_name %>
+			<%= p.text_field :health_plan_name %>
+		</div>
+		<div>
+			<%= p.label :remedies %>
+			<%= p.text_field :remedies, :class => 'bigger-form-field', maxlength: 120 %>			
+		</div>
+		<div>
+			<%= p.label :prohibited_drugs %>
+			<%= p.text_field :prohibited_drugs, :class => 'bigger-form-field', maxlength: 120 %>			
+		</div>
+	</div>
+	<% end %>
+
 
 	<p>
 		<%= f.submit :class => "btn btn-default" %>

@@ -1,1 +1,21 @@
-<h1> <%= t 'athelet.title' %></h1>
+<div class="btn-group">
+<%= link_to t('athletes.new'), new_athlete_path , class: "btn"%>
+</div>
+
+<table class="table table-hover">
+  <th> <%= t('name') %></th>
+  <th><%= t('nick_name') %></th>
+  <th><%= t('phone_number') %></th>
+  <th><%= t('birthday') %></th>
+  <th></th>
+  <th></th>
+
+
+<%= render partial: "athlete", collection: @athletes %>
+
+<div>
+      Clientes cadastrados: <span class=""><%= @athletes.length %></span>
+</div>
+  
+</table>
+

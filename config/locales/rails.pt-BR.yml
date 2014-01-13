@@ -280,6 +280,12 @@ pt-BR:
       meio: Meio
       volante: Volante
       zagueiro: Zagueiro
+    relationships:
+     tio: Tio
+     tia: Tia
+     avo_m: Avô
+     avo_f: Avó
+     outro: Outro
     rh_factor: 
       rh_positive: 'RH+'
       rh_negative: 'RH-'
@@ -386,6 +392,8 @@ pt-BR:
       last_word_connector: " e "
       two_words_connector: " e "
       words_connector: ", "
+  special_care:
+    title: "Em casos de emergência, além dos pais, a quem devemos nos dirigir?"
   time: 
     am: ""
     formats: 

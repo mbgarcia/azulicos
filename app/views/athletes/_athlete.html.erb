@@ -1,0 +1,8 @@
+<tr>
+  <td><%= athlete.full_name %></td>
+  <td><%= athlete.nick_name %></td>
+  <td><%= athlete.phone_number %></td>
+  <td><%= athlete.birth_day %></td>
+  <td><%= link_to t('links.edit'), edit_athlete_path(athlete), class: "btn btn-mini" %></td>
+  <td><%= link_to t('links.delete'), athlete, method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse atleta?' }, class: "btn btn-mini btn-danger"  %></td>
+</tr>

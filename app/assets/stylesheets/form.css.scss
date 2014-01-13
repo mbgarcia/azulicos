@@ -36,11 +36,18 @@
   margin-right:74px;
 }
 
-.check-form-field {
+.form div input[type=checkbox] {
   height: 20px;
-  color: red;
   margin-bottom: 3px;
-  margin-right: 300px;  
+}
+
+.form div input[type=checkbox]:nth-of-type(2) {
+  margin-right: 94px;
+}
+
+.form div input[type=checkbox]:nth-of-type(4) {
+  margin-right: 64px;
+  margin-left: 4px
 }
 
 .form .bigger-form-field{
@@ -50,6 +57,10 @@
 .form .number-form-field{
   width:100px;
   margin-right:80px;
+}
+
+.form .form-label {
+  margin-bottom: 10px;
 }
 
 .form div .form-date-field{
