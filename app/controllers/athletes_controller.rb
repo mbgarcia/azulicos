@@ -61,7 +61,7 @@ class AthletesController < ApplicationController
       :father_phone_number, :father_civil_status, :father_religion, :mother_name,
       :mother_birth_day, :mother_profession, :mother_phone_number, :mother_civil_status,
       :mother_religion, :responsible_name, :responsible_birth_day, :responsible_profession,
-      :email, :facebook, :twitter,
+      :email, :facebook, :twitter, :observations,
       :physical_data_attributes => [:id, :heigth, :weight, :foot, :arm, :calf, 
         :blood_group, :rh_factor, :biotype, :impulsion, :aerobic_endurance, :flexibility],
       :technical_data_attributes => [:id, :right_foot, :left_foot, :position, :second_option, :admission, 

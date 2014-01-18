@@ -322,6 +322,14 @@
 	</div>
 	<% end %>
 
+	<div class='form'>
+			<div>
+				<%= f.label :observations %>
+				<%= f.text_area :observations, cols: 250, rows: 5, maxlength: 256, :class => 'textarea' %>
+				<div class='clear'></div>
+
+			</div>
+	</div>
 
 	<p>
 		<%= f.submit :class => "btn btn-default" %>

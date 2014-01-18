@@ -100,7 +100,8 @@ pt-BR:
       room: Quarto
       user: Usuário
       user_sessions: Sessão
-  athlete:
+  athletes:
+    edit: Alterar dados
     title: Atletas
   confirmations: 
     success: "Email confirmado com sucesso, obrigado!"
