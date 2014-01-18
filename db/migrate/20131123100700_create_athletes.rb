@@ -4,7 +4,7 @@ class CreateAthletes < ActiveRecord::Migration
       t.string :full_name
       t.string :nick_name
       t.string :url_photo
-      t.datetime :birth_day
+      t.date   :birth_day
       t.string :birth_city
       t.string :birth_state
       
@@ -37,26 +37,26 @@ class CreateAthletes < ActiveRecord::Migration
       t.string :phone_number
 
       t.string :father_name
-      t.datetime :father_birth_day
+      t.date   :father_birth_day
       t.string :father_profession
       t.string :father_phone_number
       t.string :father_civil_status
       t.string :father_religion
       t.string :mother_name
-      t.datetime :mother_birth_day
+      t.date   :mother_birth_day
       t.string :mother_profession
       t.string :mother_phone_number
       t.string :mother_civil_status
       t.string :mother_religion
       t.string :responsible_name
-      t.datetime :responsible_birth_day
+      t.date   :responsible_birth_day
       t.string :responsible_profession
 
       t.string :email
       t.string :facebook
       t.string :twitter
 
-      t.datetime :admission_date
+      t.date    :admission_date
       t.boolean :is_student, :default => false
 
       t.string :observations
