@@ -256,10 +256,14 @@
 	<div class='form'>
 		<div>
 			<%= p.label :right_foot %>
-			<%= p.check_box :right_foot, {class: 'check-form-field'} %>
+			<div class='div-check'>
+			  <%= p.check_box :right_foot %>
+		  </div>
 
 			<%= p.label :left_foot %>
-			<%= p.check_box :left_foot, {class: 'check-form-field'} %>
+			<div class='div-check'>
+				<%= p.check_box :left_foot %>
+		  </div>
 
 			<%= p.label :position %>
 			<%= p.select :position, options_for_select(t('form.positions').invert, @athlete.technical_data.position), {:include_blank => true }, {:class => 'combo-form-field'} %>
@@ -306,7 +310,9 @@
 		</div>
 		<div>
 			<%= p.label :health_plan %>
-			<%= p.check_box :health_plan, {class: 'check-form-field'} %>
+			<div class='div-check'>
+			  <%= p.check_box :health_plan %>
+		  </div>
 
 			<%= p.label :health_plan_name %>
 			<%= p.text_field :health_plan_name %>
