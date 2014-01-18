@@ -18,8 +18,15 @@ class AthletesController < ApplicationController
 
   def edit
     @athlete = Athlete.find(params[:id])
-    @athlete.physical_data
-    @athlete.technical_data
+    if @athlete.physical_data.nil?
+      @athlete.build_physical_data
+    end
+    if @athlete.technical_data.nil?
+      @athlete.build_technical_data
+    end
+    if @athlete.special_care.nil?
+      @athlete.build_special_care
+    end
   end
 
   def create
